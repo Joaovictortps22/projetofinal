@@ -4,8 +4,18 @@
         public function index(){
             try{
                 $colecPostagens = Postagem::selecionaTodos();
-                var_dump($colecPostagens);
-            } 
+
+                $loader = new \Twig\Loader\FilesystemLoader('app/view');
+                $twig = new \Twig\Environment($loader);
+                $template = $twig->load('home.html');
+
+                $parametros = array();
+                $parametros['nome'] = 'Rafael';
+
+                $conteudo = $template->render($parametros);
+                echo $conteudo;
+
+            }  
             catch(Exception $e){
                 echo $e->getMessage();
             }
