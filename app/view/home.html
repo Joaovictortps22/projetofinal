@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>home</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <section>
+            <h1>Postagens: </h1>
+
+            {%for postagem in postagens%}
+            <article>
+                <header>
+                    <h3><a href="http://localhost/projetofinal/index.php/?pagina=post&id={{postagem.id}}">{{postagem.titulo}}</a></h3>
+                </header>
+
+                <p>{{postagem.conteudo}}</p>
+            </article>
+            {% endfor %}
+        </section>
+    </body>
+</html>
